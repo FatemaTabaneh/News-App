@@ -28,13 +28,6 @@ class home_screen extends StatelessWidget {
               final_List_View()
             ],
           ),
-
-      /*Column(
-        children: [
-          categoriesListView(),
-          Expanded(child: final_List_View())
-        ],
-      ),*/
     );
   }
 }

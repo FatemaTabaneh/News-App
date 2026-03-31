@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:news_application/models/article_model.dart';
 
 class News_card extends StatelessWidget {
-  const News_card({super.key});
+  final ArticleModel articleModel;
+   News_card({required this.articleModel});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
       child: Column(
         children: [
           SizedBox(height: 10),
@@ -16,12 +18,12 @@ class News_card extends StatelessWidget {
               height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
-              'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3c3xlbnwwfHwwfHx8MA%3D%3D',
+              articleModel.image
             ),
           ),
           SizedBox(height: 12),
           Text(
-            'Lage Title Should be places in this place large ',
+            articleModel.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -31,7 +33,7 @@ class News_card extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8),
-          Text('and here is the description of the news you can place your ',
+          Text(articleModel.subTitle,
             maxLines: 2,
             style: TextStyle(color: Colors.grey,fontSize: 16),)
         ],
